@@ -1,18 +1,17 @@
-def goal_based_agent(current_temperature, goal_temperature=72):
-    if current_temperature > goal_temperature:
-        return "cool"
-    elif current_temperature < goal_temperature:
-        return "heat"
-    else:
-        return "idle"
+def agent_loop(max_iters=10):
+    for i in range(max_iters):
+        step = i + 1
+
+        print("Iteration", step)
+        print("Observe")
+        print("Decide")
+        print("Act")
+
+        if step == 5:
+            return "success"
+
+    return "failure"
 
 
-temperatures = [110, 90, 72, 60, 40]
-
-for temp in temperatures:
-    action = goal_based_agent(temp)
-    print(
-        f"Temperature: {temp}°F "
-        f"| Goal: 72°F "
-        f"| Action: {action}"
-    )
+result = agent_loop(10)
+print("Result:", result)
